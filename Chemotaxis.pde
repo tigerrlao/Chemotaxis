@@ -1,6 +1,7 @@
  Bacteria[] bob;
  Prey jim;
  PImage photo;
+ float time = 0.0;
  void setup()   
  { 
  	size(500,500);
@@ -43,6 +44,11 @@
  		line(455,lines,455, lines + 10);
  		line(lines,455,lines + 10, 455);
  	}
+
+ 	textAlign(RIGHT);
+ 	textSize(50);
+ 	text(time,455,500);
+ 	time = time + 0.1;
  }  
  class Bacteria    
  {     

@@ -17,6 +17,7 @@ public class Chemotaxis extends PApplet {
  Bacteria[] bob;
  Prey jim;
  PImage photo;
+ float time = 0.0f;
  public void setup()   
  { 
  	size(500,500);
@@ -59,6 +60,11 @@ public class Chemotaxis extends PApplet {
  		line(455,lines,455, lines + 10);
  		line(lines,455,lines + 10, 455);
  	}
+
+ 	textAlign(RIGHT);
+ 	textSize(50);
+ 	text(time,455,500);
+ 	time = time + 0.1f;
  }  
  class Bacteria    
  {     
