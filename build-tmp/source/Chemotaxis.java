@@ -1,7 +1,23 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class Chemotaxis extends PApplet {
+
  Bacteria[] bob;
  Prey jim;
  PImage photo;
- void setup()   
+ public void setup()   
  { 
  	frameRate(100);
  	size(500,500);
@@ -16,7 +32,7 @@
  	}
  	photo = loadImage("Portal_Cake.png");
  }   
- void draw()   
+ public void draw()   
  {
  	background(38,35,145);
  	strokeWeight(3);
@@ -54,7 +70,7 @@
  		myY = y;
  		colour = (int)(Math.random()*255);
  	} 
- 	void walk()
+ 	public void walk()
  	{
  		if(myX > 215 && myX < 250 && myY > 215 && myY < 285)
  		{
@@ -86,7 +102,7 @@
  			myY = myY + (int)(Math.random()*7)-3;
  		}
  	}
- 	void show()
+ 	public void show()
  	{
  		myColor = color(255,colour,0);
  		fill(myColor);
@@ -102,7 +118,7 @@
  		myX = x;
  		myY = y;
  	}
- 	void move()
+ 	public void move()
  	{
  		if(keyPressed)
  		{
@@ -124,7 +140,7 @@
  			}
  		}
  	}
- 	void show()
+ 	public void show()
  	{
  		if(get(myX,myY) != color(0,255,0) && get(myX,myY) != color(38,35,145) )
  		{
@@ -151,3 +167,12 @@
  		}
  	}
  }
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "Chemotaxis" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
+}
