@@ -3,7 +3,6 @@
  PImage photo;
  void setup()   
  { 
- 	frameRate(100);
  	size(500,500);
  	jim = new Prey(20,250);
  	//bacteria
@@ -108,19 +107,19 @@
  		{
  			if(key == 'a')
  			{
- 				myX = myX - 1;
+ 				myX = myX - 3;
  			}
  			if(key == 'd')
  			{
- 				myX = myX + 1;
+ 				myX = myX + 3;
  			}
  			if(key == 'w')
  			{
- 				myY = myY - 1;
+ 				myY = myY - 3;
  			}
  			if(key == 's')
  			{
- 				myY = myY + 1;
+ 				myY = myY + 3;
  			}
  		}
  	}
