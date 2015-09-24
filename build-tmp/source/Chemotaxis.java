@@ -64,7 +64,10 @@ public class Chemotaxis extends PApplet {
  	textAlign(RIGHT);
  	textSize(50);
  	text(time,455,500);
- 	time = time + 0.1f;
+ 	if(jim.win == false)
+ 	{
+ 		time = time + 0.1f;
+ 	}
  }  
  class Bacteria    
  {     
@@ -118,6 +121,7 @@ public class Chemotaxis extends PApplet {
  class Prey
  {
  	int myX, myY;
+ 	boolean win = false;
  	Prey(int x, int y)
  	{
  		myX = x;
@@ -165,6 +169,7 @@ public class Chemotaxis extends PApplet {
  		ellipse(myX,myY,10,10);
  		if(myX >= 220 && myX <= 280 && myY >= 220 && myY <= 280)
  		{
+ 			win = true;
  			fill(255,0,250);
  			textAlign(CENTER);
  			textSize(50);
